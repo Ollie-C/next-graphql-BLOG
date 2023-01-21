@@ -9,7 +9,7 @@ const BlogPost = ({ title, author, coverPhoto, datePublished, slug }) => {
           <img src={coverPhoto.url} alt="" />
         </div>
       </Link>
-      <div className={styles.header}>
+      <div className={styles.text}>
         <h1>{title}</h1>
         <div className={styles.details}>
           <div className={styles.author}>
