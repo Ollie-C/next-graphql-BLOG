@@ -1,0 +1,21 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 4rem;
+}
+
+.header h1 {
+  font-size: 3rem;
+}
+
+.imgContainer {
+  width: 40rem;
+}
+
+.author {
+  width: 4rem;
+}
+
+.date h3 {
+  font-size: 0.5rem;
+}
