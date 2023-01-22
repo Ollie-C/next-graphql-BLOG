@@ -3,10 +3,13 @@
   flex-direction: column;
   margin-bottom: 3rem;
   border-radius: 0.5rem;
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  /* box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px; */
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
   overflow: hidden;
   width: 50%;
-  opacity: 80%;
+  opacity: 70%;
+  background-color: rgba(255, 255, 255, 0.105);
 }
 
 .card:hover {
@@ -53,9 +56,15 @@
   height: 2rem;
   width: 2rem;
   border-radius: 0.5rem;
-  margin-right: 2rem;
+  margin-right: 1rem;
 }
 
 .date h3 {
-  font-size: 0.8rem;
+  font-size: 1.2rem;
+}
+
+@media screen and (max-width: 950px) {
+  .card {
+    width: 100%;
+  }
 }

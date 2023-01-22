@@ -1,5 +1,6 @@
 import Link from "next/link";
 import styles from "../styles/BlogCard.module.css";
+import moment from "moment";
 
 const BlogPost = ({ title, author, coverPhoto, datePublished, slug }) => {
   return (
@@ -17,7 +18,7 @@ const BlogPost = ({ title, author, coverPhoto, datePublished, slug }) => {
             <h3>{author.username}</h3>
           </div>
           <div className={styles.date}>
-            <h3>{datePublished}</h3>
+            <h3>{moment(datePublished).format("MMMM d, YYYY")}</h3>
           </div>
         </div>
       </div>

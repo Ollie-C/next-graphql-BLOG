@@ -3,12 +3,13 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 3rem 6rem;
+  padding: 14rem 6rem;
   min-height: 100vh;
-  background-color: rgba(98, 151, 155, 0.247);
+  background-color: rgb(211, 240, 251);
 }
 
-.header {
-  font-size: 4rem;
-  padding: 4rem;
+@media screen and (max-width: 488px) {
+  .main {
+    padding: 12rem 2rem;
+  }
 }

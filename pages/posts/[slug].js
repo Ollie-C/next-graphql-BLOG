@@ -1,5 +1,7 @@
 import styles from "../../styles/Slug.module.css";
+import Navbar from "@/components/Navbar";
 import { GraphQLClient, gql } from "graphql-request";
+import Link from "next/link";
 
 const hygraph = new GraphQLClient(
   "https://api-eu-west-2.hygraph.com/v2/cld64i9hl1ki701um7dx93ih0/master"
@@ -59,21 +61,27 @@ export async function getStaticProps({ params }) {
 
 const BlogPost = ({ post }) => {
   return (
-    <main className={styles.blog}>
-      <img src={post.coverPhoto.url} alt="" className={styles.cover} />
-      <div className={styles.title}>
-        <img src={post.author.avatar.url} alt="" />
-        <div className={styles.authtext}>
-          <p>By {post.author.username}</p>
-          <p className={styles.date}>{post.datePublished}</p>
+    <>
+      <Navbar />
+      <main className={styles.blog}>
+        <img src={post.coverPhoto.url} alt="" className={styles.cover} />
+        <div className={styles.title}>
+          <div className={styles.authtext}>
+            <img src={post.author.avatar.url} alt="" />
+            <p>By {post.author.username}</p>
+            <p className={styles.date}>{post.datePublished}</p>
+          </div>
+          <h1>{post.title}</h1>
         </div>
-        <h1>{post.title}</h1>
-      </div>
-      <div
-        className={styles.content}
-        dangerouslySetInnerHTML={{ __html: post.content.html }}
-      ></div>
-    </main>
+        <div
+          className={styles.content}
+          dangerouslySetInnerHTML={{ __html: post.content.html }}
+        ></div>
+        <Link classname={styles.link} href="/">
+          back
+        </Link>
+      </main>
+    </>
   );
 };
 

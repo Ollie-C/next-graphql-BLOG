@@ -2,6 +2,8 @@ import Head from "next/head";
 import styles from "@/styles/Home.module.css";
 import { GraphQLClient, gql } from "graphql-request";
 import BlogPost from "@/components/BlogPost";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const hygraph = new GraphQLClient(
   "https://api-eu-west-2.hygraph.com/v2/cld64i9hl1ki701um7dx93ih0/master"
@@ -51,8 +53,8 @@ const Home = ({ posts }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Navbar />
       <main className={styles.main}>
-        <h1 className={styles.header}>An Irrelevant Blog</h1>
         {posts.map((post) => (
           <BlogPost
             title={post.title}
@@ -63,6 +65,7 @@ const Home = ({ posts }) => {
             slug={post.slug}
           />
         ))}
+        <Footer />
       </main>
     </>
   );
